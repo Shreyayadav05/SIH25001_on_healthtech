@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Health Monitoring</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+</head>
+<body class="bg-gray-100">
+
+<header class="bg-blue-600 text-white p-4 text-center">
+<h1 class="text-2xl font-bold">🌟 Smart Health Monitoring Dashboard</h1>
+</header>
+
+<main class="flex flex-wrap justify-around p-6">
+<section class="bg-white shadow-lg rounded-lg p-6 w-96 mb-6">
+<h2 class="text-xl font-semibold mb-4">Village Alerts</h2>
+<ul id="alerts-list" class="space-y-2"></ul>
+</section>
+
+<section class="bg-white shadow-lg rounded-lg p-6 w-96 mb-6">
+<h2 class="text-xl font-semibold mb-4">Disease Level Overview</h2>
+<canvas id="diseaseChart"></canvas>
+</section>
+
+<section class="bg-white shadow-lg rounded-lg p-6 w-full mb-6">
+<h2 class="text-xl font-semibold mb-4">Village Map & Alerts</h2>
+<div id="map" style="height:400px;"></div>
+</section>
+</main>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
