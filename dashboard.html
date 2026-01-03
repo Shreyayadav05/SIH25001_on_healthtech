@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 class="page-title">Live Smart Health Monitoring Dashboard</h1>
+
+<div class="cards">
+<div class="card card1">💧 Real-Time Water Monitoring</div>
+<div class="card card2">🧠 Deep Learning Prediction</div>
+<div class="card card3">🚨 Automatic Early Alerts</div>
+<div class="card card4">🏥 Government Control Panel</div>
+</div>
+
+<div class="alert-box">
+⚠ OUTBREAK MONITORING SYSTEM ACTIVE – LIVE SURVEILLANCE ENABLED
+</div>
+
+<div class="heatmap">
+<div class="zone green">LOW RISK ZONE</div>
+<div class="zone yellow">MEDIUM RISK ZONE</div>
+<div class="zone red">HIGH RISK ZONE</div>
+</div>
+
+<div class="data-section">
+<h2>Live Water Quality Data</h2>
+ <div contenteditable="true">
+    {{ tables|safe }}
+ </div>
+</div>
+
+<canvas id="casesChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+var ctx = document.getElementById('casesChart');
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ["Fever","Diarrhea","Vomiting"],
+    datasets: [{
+      label: 'Cases',
+      data: [12, 19, 7],
+      borderWidth: 2
+    }]
+  }
+});
+</script>
+
+
+<script>
+  setTimeout(function () {
+    window.location.reload();
+  }, 5000); // refresh every 5 seconds
+</script>
+
+{% if session.get("role") == "admin" %}
+<h2>ADMIN CONTROL PANEL ENABLED</h2>
+{% endif %}
+
+{% endblock %}

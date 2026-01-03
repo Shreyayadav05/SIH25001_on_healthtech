@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Reported Community Health Cases</h1>
+<div class="export-actions">
+    <a href="/export-excel?q={{ search }}" 
+       class="export-excel" 
+       onclick="showToast(); showLoader();">
+       📊 Download Excel
+    </a>
+
+    <a href="/export-pdf?q={{ search }}" 
+       class="export-pdf" 
+       onclick="showToast(); showLoader();">
+       📄 Download PDF
+    </a>
+</div>
+
+<!-- ✅ LOADING OVERLAY -->
+<div id="loader" class="loader-overlay">
+    <div class="spinner"></div>
+    <p>Generating Report...</p>
+</div>
+
+<!-- ✅ TOAST MESSAGE -->
+<div id="toast" class="toast">
+    ✅ Download Started
+</div>
+
+<script>
+function showLoader() {
+    document.getElementById("loader").style.display = "flex";
+    setTimeout(() => {
+        document.getElementById("loader").style.display = "none";
+    }, 2500);
+}
+
+function showToast() {
+    let toast = document.getElementById("toast");
+    toast.className = "toast show";
+    setTimeout(() => {
+        toast.className = "toast";
+    }, 3000);
+}
+</script>
+
+
+<form method="POST" class="search-box">
+  <input 
+    type="text" 
+    name="search" 
+    placeholder="Search by Name, Age or Symptom"
+    value="{{ search if search else '' }}"
+    required
+  >
+  
+</form>
+
+<div class="data-section">
+  {{ tables|safe }}
+</div>
+
+
+{% endblock %}

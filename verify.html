@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report Verification</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #000428, #004e92);
+            font-family: Arial;
+            text-align: center;
+            color: white;
+            padding: 80px;
+        }
+        .box {
+            background: #111;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px black;
+            width: 60%;
+            margin: auto;
+        }
+        h1 { color: #00e5ff; }
+        .status {
+            font-size: 22px;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h1>Government Health Report Verification</h1>
+    <p>Report ID: <b>{{ report_id }}</b></p>
+    <div class="status">{{ status }}</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="form-box">
+<h2>Community Health Symptom Reporting</h2>
+
+<form method="POST" action="/symptoms">
+<input name="name" placeholder="Patient Name" required>
+<input name="age" placeholder="Age" required>
+<input name="village" placeholder="Village Name" required>
+
+<select name="symptom">
+<option>Fever</option>
+<option>Diarrhea</option>
+<option>Vomiting</option>
+<option>Fatigue</option>
+</select>
+
+<button type="submit">Submit Health Report</button>
+</form>
+</div>
+
+{% endblock %}

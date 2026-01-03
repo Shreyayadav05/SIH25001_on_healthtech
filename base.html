@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Community Health System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="manifest" href="/static/manifest.json">
+
+</head>
+<body>
+<div class="nav-links">
+  <a href="{{ url_for('dashboard') }}">Dashboard</a>
+  <a href="{{ url_for('symptoms') }}">Report Symptoms</a>
+  <a href="{{ url_for('reported_cases') }}">View Reports</a>
+  <a href="{{ url_for('export_excel') }}">Export Excel</a>
+  <a href="{{ url_for('logout') }}">Logout</a>
+</div>
+
+
+<!-- ✅ THIS LINE WAS MISSING OR BROKEN -->
+<div class="main-content">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>
