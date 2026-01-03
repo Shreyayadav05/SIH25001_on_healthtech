@@ -22,6 +22,8 @@ Water-borne diseases remain a threat in rural Northeast India due to unsafe wate
 
 ## Solution Approach
 IoT devices collect live data, which is analyzed using machine learning. Results are shown on dashboards and sent through alerts to health authorities and villagers, enabling fast, preventive action.
+
+
 <img width="303" height="605" alt="image" src="https://github.com/user-attachments/assets/c53bf71a-d050-47b0-8a84-83e016664222" />
 
 ## Features
